@@ -1,0 +1,67 @@
+body{
+	display: flex;
+	box-sizing: border-box;
+	flex-direction: column;
+}
+.container{
+	display: flex;
+	flex-direction: row;
+	background-color: dodgerblue;
+	width: 100%;
+	border: 6px ridge aqua;
+	box-shadow: 3px 3px 4px cornflowerblue;
+}
+.container h1{
+	margin-left: 25px;
+	color: white;
+	width: 50%;
+}
+.nav-bar{
+	display: flex;
+	flex-direction:row;
+	justify-content: center;
+	width: 50%;
+	text-align: center;
+
+}
+.nav-bar a{
+	display: flex;
+	flex-direction: row;
+	text-decoration: none;
+	color: white;
+	font-size:25px;
+	padding: 20px;
+	background-color: dodgerblue;
+	align-items:center;
+	justify-content: center;
+}
+.nav-bar a:hover{
+	background-color: orangered;
+}
+.content{
+	margin-top: 25px;
+	display:flex;
+	width: 100%;
+	justify-content: center;
+	align-content: center;
+}
+.content h3{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	width: 50%;
+	padding: 30px;
+	border: 2px solid orangered;
+	font-size: 25px;
+	font-family: monospace;
+	box-shadow: 4px 4px orangered;
+	background-color: aliceblue;
+	animation: animateBorder 10s infinite;
+}
+@keyframes animateBorder{
+	0%{border-color: orangered;box-shadow: 4px 4px orangered;}
+	25%{border-color: red;box-shadow: 16px 16px red;}
+	50%{border-color: dodgerblue;box-shadow: 28px 28px dodgerblue;}
+	75%{border-color: lightgreen;box-shadow: 16px 16px lightgreen;}
+	100%{border-color: violet;box-shadow: 4px 4px violet;}
+}
