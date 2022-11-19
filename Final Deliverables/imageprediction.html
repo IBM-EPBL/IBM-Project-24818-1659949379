@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Predict</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+     
+<style>
+body
+{
+    background-image: url("https://i.pinimg.com/originals/be/21/1a/be211ad5043a8d05757a3538bdd8f450.jpg");
+    background-size: cover;
+}
+.bar
+{
+margin: 0px;
+padding:20px;
+background-color:white;
+opacity:0.6;
+color:black;
+font-family:'Roboto',sans-serif;
+font-style: italic;
+border-radius:20px;
+font-size:25px;
+}
+a
+{
+color:grey;
+float:right;
+text-decoration:none;
+font-style:normal;
+padding-right:20px;
+}
+a:hover{
+background-color:black;
+color:white;
+border-radius:15px;
+font-size:30px;
+padding-left:10px;
+}
+.div1{
+  background-color: lightgrey;
+  width: 500px;
+  border: 10px solid peach;
+  padding: 20px;
+  margin: 20px;
+  height: 500px;
+}
+
+
+
+
+
+.header {	position: relative;
+			top:0;	
+			margin:0px;
+			z-index: 1;
+			left: 0px;
+			right: 0px;
+			position: fixed;
+			background-color: #8B008B ;
+			color: white;
+			box-shadow: 0px 8px 4px grey;
+			overflow: hidden;
+			padding-left:20px;
+			font-family: 'Josefin Sans';
+			font-size: 2vw;
+			width: 100%;
+			height:8%;
+			text-align: center;
+		}
+		.topnav {
+  overflow: hidden;
+  background-color: #FCAD98;
+}
+
+.topnav-right a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.topnav-right a:hover {
+  background-color: #FF69B4;
+  color: black;
+}
+
+.topnav-right a.active {
+  background-color: #DA70D6;
+  color: black;
+}
+
+.topnav-right {
+  float: right;
+  padding-right:100px;
+}
+
+.img-preview {
+    width: 256px;
+    height: 256px;
+    position: relative;
+    border: 5px solid #F8F8F8;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    margin-top: 1em;
+    margin-bottom: 1em;    
+}
+
+.img-preview>div {
+    width: 100%;
+    height: 100%;
+    background-size: 256px 256px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.upload-label{
+    display: inline-block;
+    padding: 12px 30px;
+    background: #39D2B4;
+    color: #fff;
+    font-size: 1em;
+    transition: all .4s;
+    cursor: pointer;
+}
+
+.upload-label:hover{
+    background: #34495E;
+    color: #39D2B4;
+}
+
+.loader {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+</head>
+<body>
+<div class="header">    
+<div style="width:50%;float:left;font-size:2vw;text-align:left;color:black; padding-top:1%;padding-left:5%;">Nutrtion Image Analysis</div>
+  <div class="topnav-right"style="padding-top:0.5%;">
+    
+    <a href="/">Home</a>
+    <a  class="active" href="/image1">Classify</a>
+  </div>
+</div>
+<br>
+
+
+</div>
+<div class="container">
+       <center>
+<div id="content" style="margin-top:2em">
+
+  <div style="float:left">
+    <br>
+    <br>
+    <h5><font color="black" size="3" font-family="sans-serif"><b>Upload image to classify</b></font></h5><br><br>
+    
+    <div>
+        <form id="upload-file" method="post" enctype="multipart/form-data">
+           <label for="imageUpload" class="upload-label">
+                Choose...
+            </label>
+            <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+        </form>
+    
+       <center> <div class="image-section" style="display:none;">
+            <div class="img-preview">
+                <div id="imagePreview">
+                </div></center>
+            </div>
+            <center><div>
+                <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Classify</button>
+           </center></div>
+        </div>
+    
+        <div class="loader" style="display:none;margin-left: 450px;"></div>
+    
+        <h3 id="result">
+         
+            <span><p style="padding-top: 25px;"><h4>Food Classified is : <h4><b><u>{{showcase}}{{showcase1}}</p> </span>
+        </h3>
+    
+    </div>
+    </div>
+    
+           
+    
+
+</div></center>
+    </div>
+</body>
+
+<footer>
+    <script src="E:\19euec050\main.js" type="text/javascript"></script>    
+</footer>
+
+</html>
